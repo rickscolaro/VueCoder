@@ -1,0 +1,24 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+<div id="app">
+  <!--Tudo que retornado em {{}} tem que ser extringue -->
+  <p>{{ titulo }}</p>
+  <p>{{ saudacao() }}</p>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      titulo: "Usando Vue!",
+      frase: "Eu sou Vue",
+    },
+    methods: {
+      saudacao() {
+        //return "Boa Semana";
+
+        return this.frase;
+      },
+    },
+  });
+</script>

@@ -1,0 +1,30 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+<!--O KeyDown acontece primeiro (quando a tecla esta abaixando). 
+    O KeyPress acontece segundo (quando o texto for digitado). 
+    O KeyUp acontece depois da tecla digitada (quando a tecla estiver subindo e quando a entrada de texto está completo). -->
+
+<div id="app">
+  <p>{{ contador * 2 }}</p>
+  <p>{{ contador % 2 ? `${contador} é Numero positivo`: `${contador} é Numero negátivo`}}</p>
+
+  <!-- $event é uma palavra reservada que significa que o evento que foi gerado apartir do click do botão vai ser passado como parametro da função-->
+  <button v-on:Click="somar()">Somar + 1</button>
+
+  <script>
+    new Vue({
+      // el é o elemento que você quer controlar, no caso sera a div #app
+      el: "#app",
+      data: {
+        contador: 0,
+      },
+      methods: {
+        // event é que vai receber $event
+        somar() {
+          console.log();
+          return this.contador++;
+        },
+      },
+    });
+  </script>
+</div>

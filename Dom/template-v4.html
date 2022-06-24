@@ -1,0 +1,26 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+<div id="app">
+
+  <!-- <a href="{{ link }}">Google</a> -->
+  <!-- Para resolver tem que tirar o doublemustache e fazer bind, assim a variavel link é interpretada-->
+  <!--v-bind força a enterpretação do vue-->
+  <a v-bind:href="link ">Google</a>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      titulo: "Usando Vue!",
+      link: "https://www.google.com.br/",
+    },
+    methods: {
+      saudacao() {
+        //return "Boa Semana";
+
+        return this.frase;
+      },
+    },
+  });
+</script>

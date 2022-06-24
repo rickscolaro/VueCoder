@@ -1,0 +1,25 @@
+<meta charset="UTF-8" />
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+<div id="app1">{{titulo1}}</div>
+
+<div id="app2">{{titulo2}}</div>
+
+<script>
+  new Vue({
+    // el é o elemento que você quer controlar, no caso sera a div #app
+    el: "#app1",
+    data: {
+      titulo1: "Teste1",
+    },
+  });
+
+  new Vue({
+    
+    el: "#app2",
+    data: {
+      titulo2: "Teste 2",
+    },
+  });
+</script>

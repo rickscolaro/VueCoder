@@ -1,0 +1,38 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+<div id="app">
+  <p>{{ contador }}</p>
+  
+  <!-- $event é uma palavra reservada que significa que o evento que foi gerado apartir do click do botão vai ser passado como parametro da função-->
+  <button v-on:Click="somar(5, $event)">Somar 5</button>
+
+  <p v-on:mousemove="atualizarXY">Mouse: {{ x }} e {{ y }}</p>
+</div>
+
+<script>
+  new Vue({
+    // el é o elemento que você quer controlar, no caso sera a div #app
+    el: "#app",
+    data: {
+      contador: 0,
+      x: 0,
+      y: 0,
+    },
+    methods: {
+
+      // event é que vai receber $event
+      somar(passo, event) {
+
+        console.log(passo, event)
+        return this.contador+=passo;
+      },
+      atualizarXY(event) {
+        //console.log(event);
+
+        // clientX eclientY é uma variavel do proprio Browser
+        this.x = event.clientX;
+        this.y = event.clientY;
+      },
+    },
+  });
+</script>

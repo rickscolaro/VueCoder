@@ -1,0 +1,28 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+<div id="app">
+  <p>{{ contador }}</p>
+ 
+  <button v-on:Click="somar()">Somar 1</button>
+  <!-- sintaxe reduzido v-on:Click é @Click -->
+  <button @Click="somar()">@Somar 1</button>
+  <hr />
+  <input type="text" v-bind:value="contador" />
+  <!-- sintaxe reduzido v-bind:value é :value -->
+  <input type="text" :value="contador" />
+</div>
+
+<script>
+  new Vue({
+    // el é o elemento que você quer controlar, no caso sera a div #app
+    el: "#app",
+    data: {
+      contador: 0,
+    },
+    methods: {
+      somar() {
+        return this.contador++;
+      },
+    },
+  });
+</script>
